@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maxskachkov.github.io/Ohmov-zakon/sitemap.xml
+Sitemap: https://maxskachkov.github.io/demofiz/sitemap.xml
