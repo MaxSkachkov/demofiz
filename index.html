@@ -1,135 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ohmov zákon</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      background: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      max-width: 400px;
-      margin: auto;
-      background: white;
-      padding: 2em;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 1em;
-    }
-    input, select {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 0.3em;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      margin-top: 1.5em;
-      width: 100%;
-      padding: 0.7em;
-      background: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    .result {
-      text-align: center;
-      margin-top: 1.5em;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe6">
+  <title>DEMOFIZ — fyzika, ktorú si môžeš vyskúšať</title>
+  <meta name="description" content="Skúšaj fyzikálne zákony na jednoduchých interaktívnych nástrojoch. Začni Ohmovým zákonom: zmeň hodnoty a sleduj, ako sa mení obvod.">
+  <link rel="canonical" href="https://maxskachkov.github.io/Ohmov-zakon/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DEMOFIZ — fyzika, ktorú si môžeš vyskúšať">
+  <meta property="og:description" content="Jednoduché fyzikálne simulátory, ktoré vysvetľujú vzťahy názorne a bez zbytočnej teórie.">
+  <meta property="og:url" content="https://maxskachkov.github.io/Ohmov-zakon/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1>Ohmov zákon</h1>
-  <form id="ohmsLawForm">
-    <label for="calculate">Čo chceš vypočítať?</label>
-    <select id="calculate" name="calculate">
-      <option value="U">Napätie (U)</option>
-      <option value="I">Prúd (I)</option>
-      <option value="R">Odpor (R)</option>
-    </select>
-
-    <div id="input1Container">
-      <label for="input1">Prúd (I) v ampéroch:</label>
-      <input type="number" id="input1" name="input1" step="any" required>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="DEMOFIZ — domov">
+        <span class="brand-mark" aria-hidden="true">D</span><span>DEMOFIZ</span>
+      </a>
+      <nav class="site-nav" aria-label="Hlavná navigácia">
+        <a href="#nastroje">Nástroje</a>
+        <a href="#ako-to-funguje">Ako to funguje</a>
+      </nav>
     </div>
+  </header>
 
-    <div id="input2Container">
-      <label for="input2">Odpor (R) v ohmoch:</label>
-      <input type="number" id="input2" name="input2" step="any" required>
+  <main id="main" class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Fyzika na vlastné oči</p>
+      <h1 id="hero-title">Fyzika, ktorú si môžeš <span>vyskúšať.</span></h1>
+      <p class="hero-copy">Zmeň hodnoty. Sleduj, čo sa stane. Pochop súvislosť.</p>
+      <a class="button button-primary" href="./ohmov-zakon.html">
+        Začať s Ohmovým zákonom <span aria-hidden="true">→</span>
+      </a>
+      <div class="hero-formula" aria-label="Vzorec Ohmovho zákona: napätie sa rovná prúdu krát odpor">
+        <span>U</span><span class="operator">=</span><span>I</span><span class="operator">×</span><span>R</span>
+      </div>
+    </section>
+
+    <section id="nastroje" class="section-block" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Interaktívne nástroje</p>
+          <h2 id="tools-title">Vyber si, čo chceš preskúmať</h2>
+        </div>
+        <p class="section-note">Každý nástroj ukáže vzťah medzi veličinami priamo na príklade.</p>
+      </div>
+
+      <article class="tool-card">
+        <div class="tool-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <path d="M8 24h9m14 0h9M17 18l-5 6 5 6M31 18l5 6-5 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24" cy="24" r="5.5" stroke="currentColor" stroke-width="2.2"/>
+          </svg>
+        </div>
+        <div class="tool-copy">
+          <p class="tool-category">Elektrina <span class="status-pill">Dostupné</span></p>
+          <h3>Ohmov zákon</h3>
+          <p>Zisti, ako spolu súvisia napätie, elektrický prúd a odpor.</p>
+          <div class="tool-equation" aria-label="U sa rovná I krát R">U = I × R</div>
+        </div>
+        <a class="button button-secondary" href="./ohmov-zakon.html">Otvoriť simulátor <span aria-hidden="true">→</span></a>
+      </article>
+      <p class="coming-note"><span aria-hidden="true">＋</span> Ďalšie fyzikálne nástroje budú pribúdať. Každý zostane jednoduchý a zameraný na jednu myšlienku.</p>
+    </section>
+
+    <section id="ako-to-funguje" class="section-block learning-block" aria-labelledby="learning-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Jednoducho a názorne</p>
+          <h2 id="learning-title">Učenie cez skúšanie</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span class="step-number">01</span><span>Vyber veličinu, ktorú chceš vypočítať.</span></li>
+        <li><span class="step-number">02</span><span>Zadaj dve známe hodnoty alebo zmeň ukážkový príklad.</span></li>
+        <li><span class="step-number">03</span><span>Sleduj výsledok, vzorec aj zmenu v obvode.</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand brand-small" href="./"><span class="brand-mark" aria-hidden="true">D</span><span>DEMOFIZ</span></a>
+      <p>Uč sa skúšaním.</p>
+      <a class="footer-link" href="https://github.com/MaxSkachkov/Ohmov-zakon">Zdrojový kód <span aria-hidden="true">↗</span></a>
     </div>
-
-    <button type="submit">Vypočítať</button>
-    <div class="result" id="result"></div>
-  </form>
-
-  <script>
-    const form = document.getElementById('ohmsLawForm');
-    const calculate = document.getElementById('calculate');
-    const input1 = document.getElementById('input1');
-    const input2 = document.getElementById('input2');
-    const input1Container = document.getElementById('input1Container');
-    const input2Container = document.getElementById('input2Container');
-    const result = document.getElementById('result');
-
-    function updateLabels() {
-      const what = calculate.value;
-      if (what === 'U') {
-        input1Container.querySelector('label').textContent = 'Prúd (I) v ampéroch:';
-        input2Container.querySelector('label').textContent = 'Odpor (R) v ohmoch:';
-      } else if (what === 'I') {
-        input1Container.querySelector('label').textContent = 'Napätie (U) vo voltoch:';
-        input2Container.querySelector('label').textContent = 'Odpor (R) v ohmoch:';
-      } else if (what === 'R') {
-        input1Container.querySelector('label').textContent = 'Napätie (U) vo voltoch:';
-        input2Container.querySelector('label').textContent = 'Prúd (I) v ampéroch:';
-      }
-      input1.value = '';
-      input2.value = '';
-      result.textContent = '';
-    }
-
-    calculate.addEventListener('change', updateLabels);
-    updateLabels();
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const val1 = parseFloat(input1.value);
-      const val2 = parseFloat(input2.value);
-      let output = '';
-
-      if (calculate.value === 'U') {
-        output = `Napätie U = ${val1 * val2} V`;
-      } else if (calculate.value === 'I') {
-        if (val2 === 0) {
-          output = 'Chyba: delenie nulou!';
-        } else {
-          output = `Prúd I = ${val1 / val2} A`;
-        }
-      } else if (calculate.value === 'R') {
-        if (val2 === 0) {
-          output = 'Chyba: delenie nulou!';
-        } else {
-          output = `Odpor R = ${val1 / val2} Ω`;
-        }
-      }
-      result.textContent = output;
-    });
-  </script>
+  </footer>
 </body>
 </html>
