@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe6">
+  <title>Ohmov zákon — DEMOFIZ</title>
+  <meta name="description" content="Interaktívny simulátor Ohmovho zákona. Vypočítaj napätie, prúd alebo odpor a sleduj, ako sa hodnoty prejavia v elektrickom obvode.">
+  <link rel="canonical" href="https://maxskachkov.github.io/Ohmov-zakon/ohmov-zakon.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ohmov zákon — DEMOFIZ">
+  <meta property="og:description" content="Zmeň hodnoty a názorne preskúmaj vzťah medzi napätím, prúdom a odporom.">
+  <meta property="og:url" content="https://maxskachkov.github.io/Ohmov-zakon/ohmov-zakon.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="DEMOFIZ — domov">
+        <span class="brand-mark" aria-hidden="true">D</span><span>DEMOFIZ</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigácia">
+        <a href="./">Všetky nástroje</a>
+        <span class="nav-current" aria-current="page">Ohmov zákon</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell calculator-page">
+    <nav class="breadcrumbs" aria-label="Drobčeková navigácia">
+      <a href="./">DEMOFIZ</a><span aria-hidden="true">/</span><span aria-current="page">Ohmov zákon</span>
+    </nav>
+
+    <section class="calculator-intro">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Elektrina · 1 nástroj</p>
+      <h1>Ohmov zákon</h1>
+      <p>Napätie, prúd a odpor spolu súvisia. Zmeň hodnoty a pozri sa, ako sa zmení výsledok.</p>
+      <div class="formula-banner" aria-label="Napätie U sa rovná prúdu I krát odporu R">
+        <span>U</span><span class="operator">=</span><span>I</span><span class="operator">×</span><span>R</span>
+      </div>
+    </section>
+
+    <section class="simulator" aria-label="Simulátor Ohmovho zákona">
+      <div class="control-panel">
+        <div class="panel-title">
+          <p class="eyebrow">Vypočítaj jednu veličinu</p>
+          <h2>Čo chceš zistiť?</h2>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Vyber veličinu na výpočet">
+          <button type="button" class="mode-button is-active" data-mode="U" aria-pressed="true">Napätie <span>U</span></button>
+          <button type="button" class="mode-button" data-mode="I" aria-pressed="false">Prúd <span>I</span></button>
+          <button type="button" class="mode-button" data-mode="R" aria-pressed="false">Odpor <span>R</span></button>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div class="field">
+            <label id="label-a" for="value-a">Prúd I</label>
+            <div class="input-wrap">
+              <input id="value-a" name="value-a" type="number" min="0" step="any" inputmode="decimal" value="2" autocomplete="off" aria-describedby="hint-a">
+              <span id="unit-a" class="input-unit" aria-hidden="true">A</span>
+            </div>
+            <p id="hint-a" class="field-hint">Zadaj hodnotu prúdu.</p>
+          </div>
+          <div class="field">
+            <label id="label-b" for="value-b">Odpor R</label>
+            <div class="input-wrap">
+              <input id="value-b" name="value-b" type="number" min="0" step="any" inputmode="decimal" value="10" autocomplete="off" aria-describedby="hint-b">
+              <span id="unit-b" class="input-unit" aria-hidden="true">Ω</span>
+            </div>
+            <p id="hint-b" class="field-hint">Zadaj hodnotu odporu.</p>
+          </div>
+          <button class="button button-primary calculate-button" type="submit">Vypočítať <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="example-note"><span aria-hidden="true">i</span> Príklad je vyplnený vopred. Skús zmeniť číslo.</p>
+      </div>
+
+      <div class="visual-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Pozri sa na vzťah</p>
+            <h2>Čo sa deje v obvode?</h2>
+          </div>
+          <span class="visual-tag">Jednoduchý odporový obvod</span>
+        </div>
+
+        <div class="circuit-card">
+          <svg class="circuit-svg" viewBox="0 0 440 210" role="img" aria-labelledby="circuit-title circuit-desc">
+            <title id="circuit-title">Schéma jednoduchého elektrického obvodu</title>
+            <desc id="circuit-desc">Zdroj napätia, vodiče a rezistor. Smer prúdu je vyznačený šípkou.</desc>
+            <path class="circuit-wire" d="M92 54H180M262 54H366V158H92V112"/>
+            <path class="circuit-wire" d="M92 54V72"/>
+            <rect class="resistor" x="180" y="40" width="82" height="28" rx="8"/>
+            <circle class="source-circle" cx="92" cy="92" r="20"/>
+            <path class="source-mark" d="M92 83v8m-4-4h8m-4 9v7"/>
+            <path class="current-arrow" d="M123 34h42m-8-8 8 8-8 8"/>
+            <text id="circuit-current" class="diagram-label" x="142" y="22">I = 2 A</text>
+            <text id="circuit-resistance" class="diagram-label" x="204" y="94">R = 10 Ω</text>
+            <text id="circuit-voltage" class="diagram-label" x="48" y="99">U = 20 V</text>
+            <circle id="current-dot" class="current-dot" cx="145" cy="54" r="5"/>
+          </svg>
+          <div class="circuit-legend"><span><i class="legend-dot legend-voltage"></i> napätie U</span><span><i class="legend-dot legend-current"></i> prúd I</span><span><i class="legend-dot legend-resistance"></i> odpor R</span></div>
+        </div>
+
+        <div class="result-card" aria-live="polite" aria-atomic="true">
+          <div class="result-top"><span>Výsledok</span><span id="result-unit-label">napätie</span></div>
+          <p id="result-value" class="result-value">20 V</p>
+          <p id="result-working" class="result-working">U = I × R <span>2 A × 10 Ω = 20 V</span></p>
+          <p id="error-message" class="error-message" role="status" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="graph-section" aria-labelledby="graph-title">
+      <div class="graph-heading">
+        <div><p class="eyebrow">Zmena hodnôt</p><h2 id="graph-title">Výsledok sa mení spolu so vstupom</h2></div>
+        <p id="graph-description" class="graph-description">Graf ukazuje, ako sa mení napätie pri rôznom prúde a rovnakom odpore.</p>
+      </div>
+      <div class="graph-card">
+        <div class="graph-meta"><span id="graph-y-name">Napätie U (V)</span><span id="graph-fixed">Pri odpore R = 10 Ω</span></div>
+        <svg id="relationship-graph" class="relationship-graph" viewBox="0 0 360 190" role="img" aria-label="Graf závislosti napätia od prúdu">
+          <line class="graph-grid" x1="42" y1="25" x2="346" y2="25"/><line class="graph-grid" x1="42" y1="65" x2="346" y2="65"/><line class="graph-grid" x1="42" y1="105" x2="346" y2="105"/><line class="graph-grid" x1="42" y1="145" x2="346" y2="145"/>
+          <line class="graph-axis" x1="42" y1="14" x2="42" y2="150"/><line class="graph-axis" x1="42" y1="150" x2="348" y2="150"/>
+          <path id="graph-line" class="graph-line" d="M42 145 L346 25"/>
+          <circle id="graph-point" class="graph-point" cx="144" cy="105" r="6"/>
+          <text id="graph-y-max" class="graph-tick" x="8" y="29">20</text><text id="graph-y-mid" class="graph-tick" x="8" y="109">10</text><text class="graph-tick" x="39" y="169">0</text><text id="graph-x-max" class="graph-tick" x="330" y="169">4</text>
+        </svg>
+        <div class="graph-x-label"><span id="graph-x-name">Prúd I (A)</span><span id="graph-current-point">Teraz: 2 A → 20 V</span></div>
+      </div>
+    </section>
+
+    <p class="simple-note">Vzorec používame na opis jednoduchého obvodu s rezistorom.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand brand-small" href="./"><span class="brand-mark" aria-hidden="true">D</span><span>DEMOFIZ</span></a>
+      <a class="footer-link" href="./">Všetky nástroje <span aria-hidden="true">→</span></a>
+    </div>
+  </footer>
+</body>
+</html>
