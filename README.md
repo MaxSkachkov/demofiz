@@ -6,7 +6,7 @@ The first tool demonstrates **Ohm's law** in a simple resistor circuit.
 
 ## Try it
 
-Open the [DEMOFIZ catalogue](https://maxskachkov.github.io/Ohmov-zakon/) or go directly to the [Ohm's law simulator](https://maxskachkov.github.io/Ohmov-zakon/ohmov-zakon.html).
+Open the [DEMOFIZ catalogue](https://maxskachkov.github.io/demofiz/) or go directly to the [Ohm's law simulator](https://maxskachkov.github.io/demofiz/ohmov-zakon.html).
 
 No account, installation, or server is needed. The project is a static website and runs in a modern browser.
 
